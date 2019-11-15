@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+    
+      <p>{{k}} / 10 </p>
+      
+            <div v-for="it in testme" id="fm">
+                   <h2> {{it.q}}</h2>
+                    <div v-for="ans in it.a" class="vn">
+                     <!-- {{ans.option}} --> 
+                     <label class="container">
+                             <input type="radio" v-bind:value="ans.correct" v-model="tr" name="rd" class="rd" checked="checked">
+                            <span class="checkmark"></span>{{ ans.option}} 
+                          </label>
+                   
+                   
+                    </div>
+            </div>
+            <div class="end" id="end">
+                <p>Ваш результат {{score}} з 10 </p>
+            </div>
+                
+      
+
+        <button v-on:click="f()" class="btn">ok</button>
+        <a href="#" class="next" v-on:click="f()">Відповісти &raquo;</a>
+    </div>
+    
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
